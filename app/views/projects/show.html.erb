@@ -14,6 +14,13 @@
   <strong>Image:</strong>
   <%= image_tag @project.image.url %>
 </p>
+<p>
+<h3>Full Gallery</h3>
+  <% @project.photos.each do |photo| %>
+   <p><strong><%= photo.name %></strong></p>
+    <p><%= image_tag photo.image.url %></p>
 
+   <br> 
+  <% end %>
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

@@ -23,7 +23,17 @@
     <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
+
+  <div class="photos">
+    <%= f.fields_for :photos do |photo| %>
+      <%= render 'photo_fields', :f => photo %>
+    <% end %>
+    <%= link_to_add_association 'add photos', f, :photos %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
 <% end %>
