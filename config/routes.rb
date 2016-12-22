@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   resources :projects
+
   get 'static_pages/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
